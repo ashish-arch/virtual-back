@@ -1,0 +1,83 @@
+.login{
+    padding-top: 20%;
+}
+
+.login_1{
+    padding-top: 25px;
+    margin: 16px;
+}
+
+.form-control:focus {
+  border-color: inherit;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  font-size: 25px;
+  border-bottom: 2px solid black;
+  
+}
+
+
+
+input[type=username] {
+    border: none;
+    border-bottom: 2px solid black;
+    box-shadow:none;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+  }
+
+input[type=password] {
+  border: none;
+  border-bottom: 2px solid black;
+}
+input[type=name],
+input[type=fb_page],
+input[type=insta_user],
+input[type=tiktok_user],
+input[type=youtube_user],
+input[type=twitter_user] {
+	border: none;
+	border-bottom: 2px solid black;
+  }
+
+.button{
+	/*background-color: #996515;
+	*//*background: #1d4350;
+	/*fallbackforoldbrowsers*//*background: -webkit-linear-gradient(to right, #1d4350, #a43931);
+	/*Chrome10-25,Safari5.1-6*//*background: linear-gradient(to right, #1d4350, #a43931) #23a6d5;
+	/*W3C,IE10+/Edge,Firefox16+,Chrome26+,Opera12+,Safari7+*/background: linear-gradient(-45deg, #ee7752, #e73c7e, #926c02, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 5s ease infinite;
+	/*Green*/border: none;
+	color: white;
+	padding: 14px 40px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	border-radius: 18px;
+	-webkit-border-radius: 18px;
+	-moz-border-radius: 18px;
+	-ms-border-radius: 18px;
+	-o-border-radius: 18px;
+	width: 60%;
+	-webkit-animation: gradient 5s ease infinite;
+}
+
+#anime{
+  background: -webkit-linear-gradient(rgb(4, 177, 235), #A43931);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}

@@ -1,0 +1,40 @@
+.fb{
+    margin-top: 90px;
+
+}
+
+.card_resize{
+    height: 100px;
+    width: 280px;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.fb_color{
+    color: #3b5998 ;
+}
+.yt_color{
+    color: #c4302b ;
+}
+.i_color{
+    color: #3f729b;
+}
+
+.t_color{
+    color:  #00acee;
+}
+
+img{
+    height: 42px;
+    width: 42px;
+}

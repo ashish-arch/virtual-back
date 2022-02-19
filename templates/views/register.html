@@ -1,0 +1,155 @@
+
+
+<html>
+  <head>
+    <style>
+      .container {
+        margin-top: 100px;
+        margin: auto;
+      }
+
+      .content {
+        margin-top: 10px;
+        border: none;
+        width: 100%;
+        height: calc(100%);
+      }
+
+      #avatarUrl {
+        margin-top: 10px;
+      }
+
+      body {
+        padding: 20 40;
+        font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+          Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+        background-color: rgb(243, 243, 243);
+      }
+
+      .warning {
+        color: rgb(215, 0, 0);
+        font-weight: bold;
+      }
+    </style>
+
+    <script>
+      window.onload=function(){
+      document.getElementById("btn").click();
+      };
+      // Listen to messages from the iframe
+      window.addEventListener('message', receiveMessage, false)
+
+      // Handle messages from the iframe
+      function receiveMessage(event) {
+        // Check if the received message is a string and a glb url
+        // if not ignore it, and print details to the console
+        if (
+          typeof event.data === 'string' &&
+          event.data.startsWith('https://') &&
+          event.data.endsWith('.glb')
+        ) {
+          const url = event.data
+          console.log(url)
+          console.log(`Avatar URL: ${url}`)
+
+          document.getElementById('avatarUrl').innerHTML = `${url}`
+          document.getElementById('iframe').hidden = true
+          document.getElementById("user1").value = url;
+          document.getElementById("btn1").click();
+
+        } else {
+          console.log(`Received message from unknown source: ${event.data}`)
+        }
+      }
+
+      function displayIframe() {
+        document.getElementById('avatarUrl').innerHTML = ''
+        document.getElementById('iframe').hidden = false
+      }
+
+    </script>
+  </head>
+
+  <body>
+
+    <button 
+    type="hidden"
+    hidden
+    id="btn"
+    onClick="displayIframe()">
+    Open Ready Player Me
+    </button>
+
+
+
+    <div hidden id="avatarUrl" 
+    ></div>
+
+
+    <div hidden>
+      
+        
+        <form action="/register" method="POST">
+          <div class="form-group register_2">
+            <input
+              type="user1"
+              id="user1"
+              name="user1"
+              class="form-control"
+              
+
+            />
+
+          
+    
+          <button type="submit" id="btn1" class="button">Register </button>
+        </form>
+        
+      </div>
+    </div>
+    
+    
+     
+    
+    
+
+
+
+    <div class="container">
+      <iframe
+        id="iframe"
+        class="content"
+        allow="camera *; microphone *"
+        src="https://candidconnect.readyplayer.me"
+        hidden="true"
+      ></iframe>
+    </div>
+
+
+    
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

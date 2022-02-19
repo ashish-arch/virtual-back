@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>3D Object</title>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <link rel="stylesheet" href="css/couple.css">
+
+    <!--Imports a model-viewer JavaScript code -->
+    <!--It helps to handle how the 3D Object would be displayed -->
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
+
+</head>
+
+<body>
+    <!-- Main Container -->
+    <div id="aSide">
+      <!-- 3D objsect -->
+      <!-- This inserts the 3D object inside the aside container -->
+      <model-viewer src="<%= user_.user1 %>" alt="VR Headset" auto-rotate camera-controls ar ios-src="<%= user_.user1 %>">
+      </model-viewer>   
+    </div>
+
+    <div id="aSide2">
+      <!-- 3D objsect -->
+      <!-- This inserts the 3D object inside the aside container -->
+      <model-viewer src="<%= user_.user2 %>" alt="VR Headset" auto-rotate camera-controls ar ios-src="<%= user_.user2 %>">
+      </model-viewer>   
+    </div>
+
+
+
+
+
+
+
+<br><br><br><br><br><br>
+<br><br><br><br><br><br>
+<br><br><br><br><br><br>
+<br><br><br><br><br><br>
+<br><br><br><br><br><br>
+<br><br><br><br><br><br>
+<br><br><br><br><br><br>
+
+
+    <p>change background</p>
+    <span style="background-color:blue;" class="dot"></span>
+    <span style="background-color:green;" class="dot"></span>
+    <span style="background-color:red;" class="dot"></span>
+    <span style="background-color:yellow;" class="dot"></span> 
+    <p>change background</p>
+
+    <form action="single-number" method="POST">
+        <div class="form-group ">
+          <input
+            type="phone"
+            id="phone"
+            name="phone"
+            class="phone"
+            placeholder="phone"
+          />
+          <input
+          type="user1"
+          id="user1"
+          name="user1"
+          class="user1"
+          value="<%= user_.user1 %>"
+          hidden
+        />
+        </div>
+
+        <button id="down" type="submit">download</button>
+      </form>
+    
+
+
+
+      <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+      <script>
+          document.getElementById("down").onclick = function(){
+            const screenshotTarget = document.getElementById('sed');
+            html2canvas(screenshotTarget).then((canvas) => {
+                const base64image = canvas.toDataURL("image/png");
+                var anchor = document.createElement('a');
+                anchor.setAttribute("href", base64image);
+                anchor.setAttribute("download", "my-image.png");
+                anchor.click();
+                anchor.remove();
+            });
+          };
+      </script>
+</body>
+
+</html>
